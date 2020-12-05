@@ -39,6 +39,7 @@ body {
 
 
 .piece {
+  margin-top: 10px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -71,6 +72,7 @@ body {
   right: 0;
   bottom: 0;
   margin: auto;
+  margin-bottom: 10px;
   bottom: 0vh;
   display: flex;
   flex-direction: row;
