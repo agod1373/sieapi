@@ -24,7 +24,7 @@ body {
 .container {
   display: grid;
   height: 100vh;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 2fr;
   grid-template-rows: 2fr 1fr 1fr;
   padding: 50px;
 }
@@ -33,7 +33,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 2px solid black;
   text-align: center;
 }
 
@@ -44,21 +43,31 @@ body {
 
 .info {
   position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .date {
   font-size: 35px;
-  margin: 10px;
 }
 
 .description {
+  max-width: 450px;
   font-size: 25px;
-  height: 50%;
 }
 
 .download {
   font-size: 20px;
+  margin-top: 10px;
 }
+
+.piece img {
+  width: 100%;
+  z-index: 10;
+}
+
 
 #about-me {
   display: block;
@@ -71,13 +80,32 @@ body {
   border: 3px solid #f77286;
 }
 
+
 #piggy {
   background-color: #75d1b8;
 }
 
+#piggy-desc {
+  max-width: 450px;
+  font-size: 25px;
+}
 
-#piggy img {
-  width: 100%;
+
+#eye {
+  padding: 7.5%;
+}
+#eye-title {
+  color: #75d1b8;
+  margin-top: 7.5%;
+}
+#eye-date {
+  color: #75d1b8;
+}
+#eye-desc {
+  color: #75d1b8;
+}
+#eye img {
+  width: 80%;
   z-index: 10;
 }
 

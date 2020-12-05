@@ -39,7 +39,7 @@ function cardTrick(target, duration) {
     let tl = anime.timeline({
       targets: target,
       duration: duration,
-      easing: 'easeOutQuad'
+      easing: 'easeOutQuint'
     });
     tl
     .add({
