@@ -18,118 +18,106 @@ pk #f77286
 }
 
 body {
+  overflow: hidden;
   background-color: #fff;
 }
 
-.container {
-  display: grid;
-  height: 100vh;
-  grid-template-columns: 1fr 1fr 2fr;
-  grid-template-rows: 2fr 1fr 1fr;
-  padding: 50px;
-}
-
-.piece {
+.total {
+  position: absolute;
+  width: 80%;
+  height: 90vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
 }
 
-.title {
-  font-size: 50px;
-  margin: 10px;
-}
 
-.info {
-  position: absolute;
+.piece {
+  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
+  background-color: beige;
+  height: 72vh;
 }
-
-.date {
-  font-size: 35px;
+.title {
+  font-size: 10vw;
+  margin: 10px;
 }
-
 .description {
-  max-width: 450px;
-  font-size: 25px;
-}
-
-.download {
-  font-size: 20px;
-  margin-top: 10px;
-}
-
-.piece img {
   width: 100%;
-  z-index: 10;
+  text-align: center;
+  margin: 30px auto;
+  font-size: 4.8vw;
+}
+.download {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 3px;
+  font-size: 6vw;
 }
 
 
-#about-me {
-  display: block;
+.button-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  bottom: 0vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 10%;
+  width: max(80%, 250px);
+  height: 12vh;
+  background-color: beige;
+}
+.button {
+  display: flex;
+  height: 80px;
+  width: 80px;
+}
+.arrow-picture {
+  height: 80px;
+  width: 80px;
 }
 
-#about-me img {
-  width: 30%;
+
+#about-me{
+  display: flex;
+}
+#profile-pic {
+  width: 50%;
   min-width: 200px;
   border-radius: 50%;
   border: 3px solid #f77286;
 }
 
-
 #piggy {
-  background-color: #75d1b8;
-}
-
-#piggy-desc {
-  max-width: 450px;
-  font-size: 25px;
-}
-
-
-#eye {
-  padding: 7.5%;
-}
-#eye-title {
-  color: #75d1b8;
-  margin-top: 7.5%;
-}
-#eye-date {
-  color: #75d1b8;
-}
-#eye-desc {
-  color: #75d1b8;
-}
-#eye img {
-  width: 80%;
+  display: none;
+  background-color: #fff;
   z-index: 10;
 }
-
-/*
-nav {
-  display: inline-flex;
+#piggy h1 {
+  margin-top: 15%;
+  font-size: 9vw;
+}
+#piggy-info {
+  position: absolute;
   width: 100%;
-  height: 10vh;
-  background-color: #f77286;
+  height: 107vw;
+  background-color: beige;
+  z-index: -10;
 }
-
-nav ul {
-  display: inline-flex;
-  justify-content: space-around;
-  align-items: center;
+#piggy-png {
   width: 100%;
-}
-
-nav li {
-  display: inline-flex;
-  font-size: 21px;
-}
-*/
-
-p {
-
 }

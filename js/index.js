@@ -1,6 +1,4 @@
-let piggyPng = document.getElementById('piggy-png');
-let piggyDiv = document.getElementById('piggy');
-
+/*
 function shadowAnimate(target, x, y, scale, duration) {
   anime({
     targets: target,
@@ -21,12 +19,14 @@ function clickAnimate(target, x, duration, elasticity) {
   })
 }
 
-/*
 const piggyShadow = () => shadowAnimate(piggyPng, '100%', 0 , 1, 300);
 const piggyReturn = () => shadowAnimate(piggyPng, 0, 0, 1.00, 300);
 piggyPng.addEventListener('mouseenter', piggyShadow);
 piggyDiv.addEventListener('mouseleave', piggyReturn);
 */
+
+let piggyPng = document.getElementById('piggy-png');
+let piggyDiv = document.getElementById('piggy');
 
 function cardZ(target, z) {
   target.style.zIndex = z;
@@ -79,3 +79,28 @@ function cardTrick(target, duration) {
 const piggyTrick = () => cardTrick(piggyPng, 400);
 piggyPng.addEventListener('click', piggyTrick);
 piggyDiv.addEventListener('click', piggyTrick);
+
+let aboutDiv = document.getElementById('about-me');
+
+let prevArrow = document.getElementById('previous');
+let shuffle = document.getElementById('shuffle');
+let nextArrow = document.getElementById('next');
+let pictureList = [aboutDiv, piggyDiv];
+
+let current = 0;
+function cardSwap(button){
+  let length = pictureList.length;
+  if (button === nextArrow){
+    pictureList[current].style.display = 'none';
+    if (current === length-1){
+      current = 0;
+    }else {
+      current++;
+    }
+    console.log(current);
+    pictureList[current].style.display = 'flex';
+  }
+}
+
+const next = () => cardSwap(nextArrow);
+nextArrow.addEventListener('click', next);
