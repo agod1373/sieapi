@@ -7,7 +7,6 @@ oc #94a4ff
 
 pk #f77286
 */
-
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
 
 * {
@@ -30,7 +29,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  margin: auto;
+  margin: 10px auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,12 +38,11 @@ body {
 
 
 .piece {
-  margin-top: 10px;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: beige;
+  background-color: #8ee6ce;
   height: 72vh;
 }
 .title {
@@ -54,15 +52,15 @@ body {
 .description {
   width: 100%;
   text-align: center;
-  margin: 30px auto;
-  font-size: 4.8vw;
+  margin: 10px auto;
+  font-size: 4.5vw;
 }
 .download {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 3px;
-  font-size: 6vw;
+  bottom: 0;
+  font-size: 5vw;
 }
 
 
@@ -72,8 +70,6 @@ body {
   right: 0;
   bottom: 0;
   margin: auto;
-  margin-bottom: 10px;
-  bottom: 0vh;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -81,9 +77,10 @@ body {
   border-radius: 10%;
   width: max(80%, 250px);
   height: 12vh;
-  background-color: beige;
+  background-color: #fff;
 }
 .button {
+  cursor: pointer;
   display: flex;
   height: 80px;
   width: 80px;
@@ -95,7 +92,7 @@ body {
 
 
 #about-me{
-  display: flex;
+  z-index: 10;
 }
 #profile-pic {
   width: 50%;
@@ -105,7 +102,7 @@ body {
 }
 
 #piggy {
-  display: none;
+  position: absolute;
   background-color: #fff;
   z-index: 10;
 }
