@@ -221,9 +221,9 @@ function arrowAnimation(button, x){
 
 const next = () => cardSwapFull(nextArrow);
 nextArrow.addEventListener('click', next);
-const nextAnimate = () => arrowAnimation(nextArrow, 10);
+const nextAnimate = () => arrowAnimation(nextArrow, 7);
 nextArrow.addEventListener('click', nextAnimate);
 const prev = () => cardSwapFull(prevArrow);
 prevArrow.addEventListener('click', prev);
-const prevAnimate = () => arrowAnimation(prevArrow, -10);
+const prevAnimate = () => arrowAnimation(prevArrow, -7);
 prevArrow.addEventListener('click', prevAnimate);
