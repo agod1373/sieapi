@@ -93,7 +93,7 @@ let nextArrow = document.getElementById('next');
 let pictureList = [aboutDiv, piggyDiv];
 let last = piggyDiv;
 
-function cardSwapTrick(target,duration, zIndex) {
+function cardSwapTrick(target, duration, zIndex) {
   let tl = anime.timeline({
     targets: target,
     duration: duration,
