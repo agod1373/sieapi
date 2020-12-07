@@ -70,14 +70,14 @@ body {
   right: 0;
   bottom: 0;
   margin: auto;
-  padding-bottom: 100px;
+  padding-bottom: 60px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
   border-radius: 10%;
   width: max(80%, 250px);
-  height: 12vh;
+  height: 6vh;
   background-color: #fff;
 }
 .button {
