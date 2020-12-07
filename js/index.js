@@ -203,7 +203,27 @@ let length = pictureList.length;
   }
 }
 
+function arrowAnimation(button, x){
+  let tl = anime.timeline({
+    targets: button,
+    duration: 135,
+    easing: 'easeOutQuad'
+  });
+  tl
+  .add({
+    translateX: x
+  })
+  tl
+  .add({
+    translateX: 0
+  })
+}
+
 const next = () => cardSwapFull(nextArrow);
 nextArrow.addEventListener('click', next);
+const nextAnimate = () => arrowAnimation(nextArrow, 10);
+nextArrow.addEventListener('click', nextAnimate);
 const prev = () => cardSwapFull(prevArrow);
 prevArrow.addEventListener('click', prev);
+const prevAnimate = () => arrowAnimation(prevArrow, -10);
+prevArrow.addEventListener('click', prevAnimate);
