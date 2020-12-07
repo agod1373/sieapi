@@ -43,7 +43,7 @@ body {
   flex-direction: column;
   align-items: center;
   background-color: #8ee6ce;
-  height: 72vh;
+  height: 65vh;
 }
 .title {
   font-size: 10vw;
@@ -69,7 +69,8 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  margin: 0px auto 50px auto;
+  margin: auto;
+  padding-bottom: 100px;
   display: flex;
   flex-direction: row;
   align-items: center;
