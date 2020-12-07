@@ -44,6 +44,7 @@ body {
   align-items: center;
   background-color: #8ee6ce;
   height: 70vh;
+  border-radius: 8%;
 }
 .title {
   font-size: 10vw;
@@ -117,7 +118,33 @@ body {
   height: 107vw;
   background-color: beige;
   z-index: -10;
+  border-radius: 8%;
 }
 #piggy-png {
   width: 100%;
+  border-radius: 10%;
+}
+
+#eye {
+  position: absolute;
+  background-color: #fff;
+  z-index: 10;
+}
+#eye h1 {
+  margin-top: 15%;
+  font-size: 9vw;
+}
+#eye-info {
+  position: absolute;
+  width: 100%;
+  margin-top: 30%;
+  height: 60vw;
+  background-color: #b3beff;
+  z-index: -10;
+  border-radius: 10%;
+}
+#eye-png {
+  width: 100%;
+  border-radius: 10%;
+  margin-top: 30%;
 }

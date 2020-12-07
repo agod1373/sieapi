@@ -24,9 +24,11 @@ const piggyReturn = () => shadowAnimate(piggyPng, 0, 0, 1.00, 300);
 piggyPng.addEventListener('mouseenter', piggyShadow);
 piggyDiv.addEventListener('mouseleave', piggyReturn);
 */
-
+let aboutDiv = document.getElementById('about-me');
 let piggyPng = document.getElementById('piggy-png');
 let piggyDiv = document.getElementById('piggy');
+let eyeDiv = document.getElementById('eye');
+let eyePng = document.getElementById('eye-png');
 
 function cardZ(target, z) {
   target.style.zIndex = z;
@@ -81,19 +83,19 @@ function cardTrick(target, duration) {
 const piggyTrick = () => cardTrick(piggyPng, 400);
 piggyPng.addEventListener('click', piggyTrick);
 piggyDiv.addEventListener('click', piggyTrick);
+const eyeTrick = () => cardTrick(eyePng, 400);
+eyePng.addEventListener('click', eyeTrick);
+eyeDiv.addEventListener('click', eyeTrick);
 
-
-
-
-let aboutDiv = document.getElementById('about-me');
 
 let prevArrow = document.getElementById('previous');
 let shuffle = document.getElementById('shuffle');
 let nextArrow = document.getElementById('next');
-let pictureList = [aboutDiv, piggyDiv];
-let last = piggyDiv;
+let pictureList = [aboutDiv, piggyDiv, eyeDiv];
+let first = pictureList[0];
+let last = pictureList[pictureList.length - 1];
 
-function cardSwapTrick(target, duration, zIndex) {
+function cardSwapForward(target, duration) {
   let tl = anime.timeline({
     targets: target,
     duration: duration,
@@ -121,30 +123,71 @@ function cardSwapTrick(target, duration, zIndex) {
   }
 }
 
+function cardSwapBackward(target, duration) {
+  let tl = anime.timeline({
+    targets: target,
+    duration: duration,
+    easing: 'easeOutQuint'
+  });
+  tl
+  .add({
+    translateX: '100%',
+    translateY: '-10%',
+    rotate: 10
+  });
+  //this is when the z-index of the current card should be negated
+  tl
+  .add({
+    translateX: 0,
+    translateY: 0,
+    rotate: 0
+  })
+  if (target !== first){
+    const changeZ = () => cardZ(target, 11);
+    setTimeout(changeZ, duration);
+  }else {
+    const changeZAll = () => zReturn();
+    setTimeout(changeZAll, duration);
+
+  }
+}
+
 function zReturn(){
   for (let i=0; i<pictureList.length; i++){
     pictureList[i].style.zIndex = '10';
   }
 }
 
-let current = 0;
+let current = 0
+let prevCurrent = pictureList.length-1;
 function cardSwapFull(button){
-  let length = pictureList.length;
+let length = pictureList.length;
 
   //next arrow click
   if (button === nextArrow){
-    if (current !== length-1){
-      cardSwapTrick(pictureList[current], 400);
-    }else {
-      cardSwapTrick(pictureList[current], 400);
-    }
+    cardSwapForward(pictureList[current], 400);
     if (current === length-1){
       current = 0;
     }else {
       current++;
     }
   }
+
+  //prev arrow click
+  if (button === prevArrow){
+    if (current === 0){
+      current = pictureList.length;
+    }
+    cardSwapBackward(pictureList[current-1], 400);
+    current--;
+  }
+
+  if (button === shuffle){
+    
+  }
 }
 
 const next = () => cardSwapFull(nextArrow);
 nextArrow.addEventListener('click', next);
+const prev = () => cardSwapFull(prevArrow);
+prevArrow.addEventListener('click', prev);
