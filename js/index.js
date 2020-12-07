@@ -29,6 +29,9 @@ let piggyPng = document.getElementById('piggy-png');
 let piggyDiv = document.getElementById('piggy');
 let eyeDiv = document.getElementById('eye');
 let eyePng = document.getElementById('eye-png');
+let lipsDiv = document.getElementById('lips');
+let lipsPng = document.getElementById('lips-png');
+let alexDiv = document.getElementById('about-alex');
 
 function cardZ(target, z) {
   target.style.zIndex = z;
@@ -86,12 +89,15 @@ piggyDiv.addEventListener('click', piggyTrick);
 const eyeTrick = () => cardTrick(eyePng, 400);
 eyePng.addEventListener('click', eyeTrick);
 eyeDiv.addEventListener('click', eyeTrick);
+const lipsTrick = () => cardTrick(lipsPng, 400);
+lipsPng.addEventListener('click', lipsTrick);
+lipsDiv.addEventListener('click', lipsTrick);
 
 
 let prevArrow = document.getElementById('previous');
 let shuffle = document.getElementById('shuffle');
 let nextArrow = document.getElementById('next');
-let pictureList = [aboutDiv, piggyDiv, eyeDiv];
+let pictureList = [aboutDiv, piggyDiv, eyeDiv, lipsDiv, alexDiv];
 let first = pictureList[0];
 let last = pictureList[pictureList.length - 1];
 
@@ -183,7 +189,7 @@ let length = pictureList.length;
   }
 
   if (button === shuffle){
-    
+
   }
 }
 
