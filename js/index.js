@@ -35,6 +35,8 @@ let lipsDiv = document.getElementById('lips');
 let lipsPng = document.getElementById('lips-png');
 let ganeshaDiv = document.getElementById('ganesha');
 let ganeshaPng = document.getElementById('ganesha-png');
+let underwaterDiv = document.getElementById('underwater');
+let underwaterPng = document.getElementById('underwater-png');
 let alexDiv = document.getElementById('about-alex');
 
 function cardZ(target, z) {
@@ -99,6 +101,9 @@ jasiDiv.addEventListener('click', jasiTrick);
 const lipsTrick = () => cardTrick(lipsPng, 400);
 lipsPng.addEventListener('click', lipsTrick);
 lipsDiv.addEventListener('click', lipsTrick);
+const underwaterTrick = () => cardTrick(underwaterPng, 400);
+underwaterPng.addEventListener('click', underwaterTrick);
+underwaterDiv.addEventListener('click', underwaterTrick);
 const ganeshaTrick = () => cardTrick(ganeshaPng, 400);
 ganeshaPng.addEventListener('click', ganeshaTrick);
 ganeshaDiv.addEventListener('click', ganeshaTrick);
@@ -107,7 +112,7 @@ ganeshaDiv.addEventListener('click', ganeshaTrick);
 let prevArrow = document.getElementById('previous');
 let shuffle = document.getElementById('shuffle');
 let nextArrow = document.getElementById('next');
-let pictureList = [aboutDiv, piggyDiv, eyeDiv, jasiDiv, lipsDiv, ganeshaDiv, alexDiv];
+let pictureList = [aboutDiv, piggyDiv, eyeDiv, jasiDiv, lipsDiv, underwaterDiv, ganeshaDiv, alexDiv];
 let first = pictureList[0];
 let last = pictureList[pictureList.length - 1];
 

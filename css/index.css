@@ -198,6 +198,30 @@ body {
   margin-top: 30%;
 }
 
+#underwater {
+  position: absolute;
+  background-color: #fff;
+  z-index: 10;
+}
+#underwater h1 {
+  margin-top: 10%;
+  font-size: 9vw;
+}
+#underwater-info {
+  position: absolute;
+  width: 100%;
+  margin-top: 30%;
+  height: 79.5vw;
+  background-color: #87deda;
+  z-index: -10;
+  border-radius: 12%;
+}
+#underwater-png {
+  width: 100%;
+  border-radius: 12%;
+  margin-top: 30%;
+}
+
 #ganesha {
   position: absolute;
   background-color: #fff;
