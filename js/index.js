@@ -181,6 +181,9 @@ function cardSwapBackward(target, duration) {
 function zReturn(){
   for (let i=0; i<pictureList.length; i++){
     pictureList[i].style.zIndex = '10';
+    if(i !== 0){
+      pictureList[i].style.display = 'none';
+    }  
   }
 }
 
@@ -188,9 +191,14 @@ let current = 0
 let prevCurrent = pictureList.length-1;
 function cardSwapFull(button){
 let length = pictureList.length;
-
   //next arrow click
   if (button === nextArrow){
+    if (current !== pictureList.length-1){
+      pictureList[current+1].style.display = 'flex';
+    }else{
+      pictureList[0].style.display = 'flex';
+    }
+
     cardSwapForward(pictureList[current], 400);
     if (current === length-1){
       current = 0;
