@@ -33,10 +33,12 @@ let jasiDiv = document.getElementById('jasi-alien');
 let jasiPng = document.getElementById('jasi-alien-png');
 let lipsDiv = document.getElementById('lips');
 let lipsPng = document.getElementById('lips-png');
-let ganeshaDiv = document.getElementById('ganesha');
-let ganeshaPng = document.getElementById('ganesha-png');
 let underwaterDiv = document.getElementById('underwater');
 let underwaterPng = document.getElementById('underwater-png');
+let neonBorealisDiv = document.getElementById('neon-borealis');
+let neonBorealisPng = document.getElementById('neon-borealis-png');
+let ganeshaDiv = document.getElementById('ganesha');
+let ganeshaPng = document.getElementById('ganesha-png');
 let alexDiv = document.getElementById('about-alex');
 
 function cardZ(target, z) {
@@ -107,12 +109,15 @@ underwaterDiv.addEventListener('click', underwaterTrick);
 const ganeshaTrick = () => cardTrick(ganeshaPng, 400);
 ganeshaPng.addEventListener('click', ganeshaTrick);
 ganeshaDiv.addEventListener('click', ganeshaTrick);
+const neonBorealisTrick = () => cardTrick(neonBorealisPng, 400);
+neonBorealisPng.addEventListener('click', neonBorealisTrick);
+neonBorealisDiv.addEventListener('click', neonBorealisTrick);
 
 
 let prevArrow = document.getElementById('previous');
 let shuffle = document.getElementById('shuffle');
 let nextArrow = document.getElementById('next');
-let pictureList = [aboutDiv, piggyDiv, eyeDiv, jasiDiv, lipsDiv, underwaterDiv, ganeshaDiv, alexDiv];
+let pictureList = [aboutDiv, piggyDiv, eyeDiv, jasiDiv, lipsDiv, underwaterDiv, neonBorealisDiv, ganeshaDiv, alexDiv];
 let first = pictureList[0];
 let last = pictureList[pictureList.length - 1];
 
