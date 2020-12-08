@@ -30,8 +30,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  margin: auto;
-  margin-top: max(auto, 20px);
+  margin: 30px auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -293,6 +292,9 @@ body {
 }
 
 @media screen and (min-width: 451px) {
+  .total {
+    margin: auto;
+  }
   #mobile{
     width: 100%;
     display: inline-block;
