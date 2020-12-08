@@ -118,8 +118,9 @@ let prevArrow = document.getElementById('previous');
 let shuffle = document.getElementById('shuffle');
 let nextArrow = document.getElementById('next');
 let pictureList = [aboutDiv, piggyDiv, eyeDiv, jasiDiv, lipsDiv, underwaterDiv, neonBorealisDiv, ganeshaDiv, alexDiv];
+let length = pictureList.length;
 let first = pictureList[0];
-let last = pictureList[pictureList.length - 1];
+let last = pictureList[length - 1];
 
 function cardSwapForward(target, duration) {
   let tl = anime.timeline({
@@ -179,21 +180,19 @@ function cardSwapBackward(target, duration) {
 }
 
 function zReturn(){
-  for (let i=0; i<pictureList.length; i++){
+  for (let i=0; i<length; i++){
     pictureList[i].style.zIndex = '10';
     if(i !== 0){
       pictureList[i].style.display = 'none';
-    }  
+    }
   }
 }
 
-let current = 0
-let prevCurrent = pictureList.length-1;
+let current = 0;
 function cardSwapFull(button){
-let length = pictureList.length;
   //next arrow click
   if (button === nextArrow){
-    if (current !== pictureList.length-1){
+    if (current !== length-1){
       pictureList[current+1].style.display = 'flex';
     }else{
       pictureList[0].style.display = 'flex';
@@ -210,10 +209,18 @@ let length = pictureList.length;
   //prev arrow click
   if (button === prevArrow){
     if (current === 0){
-      current = pictureList.length;
+      pictureList[length-1].style.display = 'flex';
+      current = length;
+      cardSwapBackward(pictureList[current-1], 400);
+      current--;
+    }else {
+      pictureList[current-1].style.display = 'flex';
+      cardSwapBackward(pictureList[current-1], 400);
+      current--;
     }
-    cardSwapBackward(pictureList[current-1], 400);
-    current--;
+
+
+
   }
 
   if (button === shuffle){
