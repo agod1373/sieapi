@@ -24,7 +24,7 @@ body {
 .total {
   position: absolute;
   width: 80%;
-  max-width: 360;
+  max-width: 360px;
   height: 90vh;
   top: 0;
   left: 0;
@@ -41,6 +41,7 @@ body {
 .piece {
   position: relative;
   display: flex;
+  max-width: 360px;
   flex-direction: column;
   align-items: center;
   background-color: #8ee6ce;
@@ -62,7 +63,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  font-size: 5vw;
+  font-size: min(28px, 5vw);
 }
 
 
@@ -97,7 +98,9 @@ body {
 #about-me{
   display: flex;
   position: absolute;
+  max-height: 600px;
   z-index: 10;
+  border-radius: 12%;
 }
 #profile-pic {
   width: 50%;
@@ -115,19 +118,20 @@ body {
 }
 #piggy h1 {
   margin-top: 5%;
-  font-size: 9vw;
+  font-size: min(45px, 9vw);
 }
 #piggy-info {
   position: absolute;
   width: 100%;
   height: 107vw;
+  max-height: 480px;
   background-color: beige;
   z-index: -10;
-  border-radius: 10%;
+  border-radius: 15%;
 }
 #piggy-png {
   width: 100%;
-  border-radius: 10%;
+  border-radius: 15%;
 }
 
 #eye {
@@ -138,11 +142,12 @@ body {
 }
 #eye h1 {
   margin-top: 15%;
-  font-size: 9vw;cv
+  font-size: min(45px, 9vw);
 }
 #eye-info {
   position: absolute;
   width: 100%;
+  max-height: 270px;
   margin-top: 30%;
   height: 60vw;
   background-color: #b3beff;
@@ -163,11 +168,12 @@ body {
 }
 #jasi-alien h1 {
   margin-top: 5%;
-  font-size: 9vw;
+  font-size: min(45px, 9vw);
 }
 #jasi-alien-info {
   position: absolute;
   width: 100%;
+  max-height: 330px;
   margin-top: 25%;
   height: 73vw;
   background-color: #feffb8;
@@ -188,11 +194,12 @@ body {
 }
 #lips h1 {
   margin-top: 15%;
-  font-size: 9vw;
+  font-size: min(45px, 9vw);
 }
 #lips-info {
   position: absolute;
   width: 100%;
+  max-height: 270px;
   margin-top: 30%;
   height: 60vw;
   background-color: #e4b8ff;
@@ -213,11 +220,12 @@ body {
 }
 #underwater h1 {
   margin-top: 5%;
-  font-size: 9vw;
+  font-size: min(45px, 9vw);
 }
 #underwater-info {
   position: absolute;
   width: 100%;
+  max-height: 358px;
   margin-top: 25%;
   height: 79.5vw;
   background-color: #87deda;
@@ -237,20 +245,21 @@ body {
   z-index: 10;
 }
 #neon-borealis h1 {
-  margin-top: 2%;
-  font-size: 9vw;
+  margin-top: 0%;
+  font-size: min(45px, 9vw);
 }
 #neon-borealis-info {
   position: absolute;
   width: 100%;
+  max-height: 480px;
   height: 106.5vw;
   background-color: #f2b8a5;
   z-index: -10;
-  border-radius: 12%;
+  border-radius: 13%;
 }
 #neon-borealis-png {
   width: 100%;
-  border-radius: 12%;
+  border-radius: 13%;
 }
 
 #ganesha {
@@ -260,12 +269,13 @@ body {
   z-index: 10;
 }
 #ganesha h1 {
-  margin-top: 2%;
-  font-size: 9vw;
+  margin-top: 0%;
+  font-size: min(45px, 9vw);
 }
 #ganesha-info {
   position: absolute;
   width: 100%;
+  max-height: 480px;
   height: 106.5vw;
   background-color: #b8e6ff;
   z-index: -10;
@@ -280,6 +290,7 @@ body {
   display: none;
   position: absolute;
   z-index: 10;
+  max-height: 600px;
   background-color: #ffce99;
 }
 #alex-profile-pic {
@@ -290,4 +301,51 @@ body {
 }
 #title-alex, #description-alex, #description-alex a{
   color: white;
+}
+
+#mobile{
+  display: none;
+}
+
+@media screen and (min-width: 451px) {
+  #mobile{
+    width: 100%;
+    display: inline-block;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+  }
+  .button-container {
+    padding-bottom: 30%;
+    margin-bottom: 10%;
+  }
+  .button {
+    height: 100px;
+    width: 100px;
+  }
+  .arrow-picture {
+    height: 100px;
+    width: 100px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #mobile{
+    width: 100%;
+    display: inline-block;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+  }
+  .button-container {
+    padding-bottom: 70%;
+  }
+  .button {
+    height: 100px;
+    width: 100px;
+  }
+  .arrow-picture {
+    height: 100px;
+    width: 100px;
+  }
 }
