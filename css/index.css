@@ -30,7 +30,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  margin: 10px auto;
+  margin: 20px auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -45,8 +45,12 @@ body {
   flex-direction: column;
   align-items: center;
   background-color: #8ee6ce;
-  height: 70vh;
+  height: 65vh;
   border-radius: 8%;
+}
+.piece h1{
+  margin-top: 3%;
+  font-size: min(30px, 7vw);
 }
 .title {
   font-size: min(50px, 10vw);
@@ -71,9 +75,8 @@ body {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 0;
+  bottom: min(14vh, 300px);
   margin: auto;
-  padding-bottom: 70px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -116,10 +119,6 @@ body {
   background-color: #fff;
   z-index: 10;
 }
-#piggy h1 {
-  margin-top: 5%;
-  font-size: min(45px, 9vw);
-}
 #piggy-info {
   position: absolute;
   width: 100%;
@@ -139,10 +138,6 @@ body {
   position: absolute;
   background-color: #fff;
   z-index: 10;
-}
-#eye h1 {
-  margin-top: 15%;
-  font-size: min(45px, 9vw);
 }
 #eye-info {
   position: absolute;
@@ -166,10 +161,6 @@ body {
   background-color: #fff;
   z-index: 10;
 }
-#jasi-alien h1 {
-  margin-top: 5%;
-  font-size: min(45px, 9vw);
-}
 #jasi-alien-info {
   position: absolute;
   width: 100%;
@@ -191,10 +182,6 @@ body {
   position: absolute;
   background-color: #fff;
   z-index: 10;
-}
-#lips h1 {
-  margin-top: 15%;
-  font-size: min(45px, 9vw);
 }
 #lips-info {
   position: absolute;
@@ -218,10 +205,6 @@ body {
   background-color: #fff;
   z-index: 10;
 }
-#underwater h1 {
-  margin-top: 5%;
-  font-size: min(45px, 9vw);
-}
 #underwater-info {
   position: absolute;
   width: 100%;
@@ -244,10 +227,6 @@ body {
   background-color: #fff;
   z-index: 10;
 }
-#neon-borealis h1 {
-  margin-top: 0%;
-  font-size: min(45px, 9vw);
-}
 #neon-borealis-info {
   position: absolute;
   width: 100%;
@@ -267,10 +246,6 @@ body {
   position: absolute;
   background-color: #fff;
   z-index: 10;
-}
-#ganesha h1 {
-  margin-top: 0%;
-  font-size: min(45px, 9vw);
 }
 #ganesha-info {
   position: absolute;
@@ -311,41 +286,23 @@ body {
   #mobile{
     width: 100%;
     display: inline-block;
-    position: fixed;
+    position: absolute;
+    margin-bottom: 10px;
     bottom: 0;
     text-align: center;
+    font-size: min(4vh, 5vw);
+    color: #de4545;
   }
   .button-container {
-    padding-bottom: 30%;
-    margin-bottom: 10%;
+    bottom: min(9vh, 300px);
   }
   .button {
-    height: 100px;
-    width: 100px;
+    margin: 0px 20px;
+    height: 90px;
+    width: 90px;
   }
   .arrow-picture {
-    height: 100px;
-    width: 100px;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  #mobile{
-    width: 100%;
-    display: inline-block;
-    position: fixed;
-    bottom: 0;
-    text-align: center;
-  }
-  .button-container {
-    padding-bottom: 70%;
-  }
-  .button {
-    height: 100px;
-    width: 100px;
-  }
-  .arrow-picture {
-    height: 100px;
-    width: 100px;
+    height: 90px;
+    width: 90px;
   }
 }
