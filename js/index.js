@@ -255,14 +255,14 @@ prevArrow.addEventListener('click', prevAnimate);
 const shuffleAction = () => cardSwapFull(shuffle);
 shuffle.addEventListener('click', shuffleAction);
 
-function displayChange(mode){
+function displayChange(mode, exclude){
   if (mode === 'see'){
     for (let i=0; i<length; i++){
       pictureList[i].style.display = 'flex';
     }
   }else {
     for (let i=0; i<length; i++){
-      if (i !== 0){
+      if (i !== pictureList.indexOf(exclude)){
         pictureList[i].style.display = 'none';
       }
     }
@@ -314,9 +314,11 @@ function rng(min, max) {
 
 
 const see = () => displayChange('see');
-const hide = () => displayChange('hide');
 async function shuffleAnimation(){
+  let rand = pictureList[Math.floor(rng(0, length-1))];
+  rand.style.zIndex = '12';
   see();
+  const hide = () => displayChange('hide', rand);
   setTimeout(hide, 5400);
   for (let i=0; i<3; i++){
     for (let i=0; i<pngList.length; i++){
