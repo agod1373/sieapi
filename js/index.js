@@ -118,6 +118,8 @@ let prevArrow = document.getElementById('previous');
 let shuffle = document.getElementById('shuffle');
 let nextArrow = document.getElementById('next');
 let pictureList = [aboutDiv, piggyDiv, eyeDiv, jasiDiv, lipsDiv, underwaterDiv, neonBorealisDiv, ganeshaDiv, alexDiv];
+let pictureListCopy = [aboutDiv, piggyDiv, eyeDiv, jasiDiv, lipsDiv, underwaterDiv, neonBorealisDiv, ganeshaDiv, alexDiv];
+let pngList = [aboutDiv, piggyPng, eyePng, jasiPng, lipsPng, underwaterPng, neonBorealisPng, ganeshaPng, alexDiv];
 let length = pictureList.length;
 let first = pictureList[0];
 let last = pictureList[length - 1];
@@ -218,13 +220,11 @@ function cardSwapFull(button){
       cardSwapBackward(pictureList[current-1], 400);
       current--;
     }
-
-
-
   }
 
+  //shuffle button click
   if (button === shuffle){
-
+    shuffleAnimation()
   }
 }
 
@@ -252,3 +252,76 @@ const prev = () => cardSwapFull(prevArrow);
 prevArrow.addEventListener('click', prev);
 const prevAnimate = () => arrowAnimation(prevArrow, -7);
 prevArrow.addEventListener('click', prevAnimate);
+const shuffleAction = () => cardSwapFull(shuffle);
+shuffle.addEventListener('click', shuffleAction);
+
+function displayChange(mode){
+  if (mode === 'see'){
+    for (let i=0; i<length; i++){
+      pictureList[i].style.display = 'flex';
+    }
+  }else {
+    for (let i=0; i<length; i++){
+      if (i !== 0){
+        pictureList[i].style.display = 'none';
+      }
+    }
+  }
+}
+
+function rotate(target, direction, rotateNumber, translateXNumber, translateYNumber){
+  if (direction === 'left'){
+    let tl = anime.timeline({
+      targets: target,
+      duration: 200,
+      easing: 'spring'
+    })
+    tl
+    .add({
+      rotate: rotateNumber,
+      translateX: translateXNumber,
+      translateY: translateYNumber
+    })
+    tl
+    .add({
+      rotate: 0,
+      translateX: 0,
+      translateY: 0
+    })
+  }else {
+    let tl = anime.timeline({
+      targets: target
+    })
+    tl
+    .add({
+      rotate: rotateNumber,
+      translateX: translateXNumber,
+      translateY: translateYNumber
+    })
+    tl
+    .add({
+      rotate: 0,
+      translateX: 0,
+      translateY: 0
+    })
+  }
+
+}
+
+function rng(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+
+const see = () => displayChange('see');
+const hide = () => displayChange('hide');
+async function shuffleAnimation(){
+  see();
+  setTimeout(hide, 5400);
+  for (let i=0; i<3; i++){
+    for (let i=0; i<pngList.length; i++){
+      rotate(pngList[i], 'left', (rng(-200, 200)), rng(-400, 400), rng(-400, 400));
+      await new Promise(r => setTimeout(r, 100));
+    }
+  }
+}
