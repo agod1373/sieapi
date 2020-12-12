@@ -17,6 +17,7 @@ pk #f77286
 }
 
 body {
+  z-index: 0;
   overflow: hidden;
   background-color: #fff;
 }
@@ -39,14 +40,15 @@ body {
 
 
 .piece {
-  position: relative;
+  position: absolute;
   display: flex;
   max-width: 360px;
   flex-direction: column;
   align-items: center;
-  background-color: #8ee6ce;
   height: 65vh;
-  border-radius: 8%;
+  display: none;
+  background-color: #fff;
+  z-index: 10;
 }
 .piece h1{
   margin-top: 3%;
@@ -96,16 +98,15 @@ body {
   height: 65px;
   width: 65px;
 }
-
-
-#about-me{
-  display: flex;
-  position: absolute;
-  max-height: 600px;
-  z-index: 10;
-  border-radius: 12%;
+#shuffle {
+  height: 70px;
+  width: 70px;
 }
-#profile-pic {
+#shuffle-picture {
+  height: 70px;
+  width: 70px;
+}
+.profile-pic {
   width: 50%;
   min-width: 200px;
   max-width: 200px;
@@ -113,178 +114,160 @@ body {
   border: 3px solid #f77286;
 }
 
-#piggy {
-  display: none;
-  position: absolute;
-  background-color: #fff;
-  z-index: 10;
-}
-#piggy-info {
+.info {
   position: absolute;
   width: 100%;
-  height: 107vw;
-  max-height: 480px;
   background-color: beige;
   z-index: -10;
   border-radius: 15%;
 }
-#piggy-png {
-  width: 100%;
-  border-radius: 15%;
-}
-
-#eye {
-  display: none;
-  position: absolute;
-  background-color: #fff;
-  z-index: 10;
-}
-#eye-info {
-  position: absolute;
-  width: 100%;
-  max-height: 270px;
-  margin-top: 30%;
-  height: 60vw;
-  background-color: #b3beff;
-  z-index: -10;
-  border-radius: 11%;
-}
-#eye-png {
-  width: 100%;
-  border-radius: 11%;
-  margin-top: 30%;
-}
-
-#jasi-alien {
-  display: none;
-  position: absolute;
-  background-color: #fff;
-  z-index: 10;
-}
-#jasi-alien-info {
-  position: absolute;
-  width: 100%;
-  max-height: 330px;
-  margin-top: 25%;
-  height: 73vw;
-  background-color: #feffb8;
-  z-index: -10;
-  border-radius: 11%;
-}
-#jasi-alien-png {
-  width: 100%;
-  border-radius: 12%;
-  margin-top: 25%;
-}
-
-#lips {
-  display: none;
-  position: absolute;
-  background-color: #fff;
-  z-index: 10;
-}
-#lips-info {
-  position: absolute;
-  width: 100%;
-  max-height: 270px;
-  margin-top: 30%;
-  height: 60vw;
-  background-color: #e4b8ff;
-  z-index: -10;
-  border-radius: 11%;
-}
-#lips-png {
-  width: 100%;
-  border-radius: 11%;
-  margin-top: 30%;
-}
-
-#underwater {
-  display: none;
-  position: absolute;
-  background-color: #fff;
-  z-index: 10;
-}
-#underwater-info {
-  position: absolute;
-  width: 100%;
-  max-height: 358px;
-  margin-top: 25%;
-  height: 79.5vw;
-  background-color: #87deda;
-  z-index: -10;
-  border-radius: 12%;
-}
-#underwater-png {
-  width: 100%;
-  border-radius: 12%;
-  margin-top: 25%;
-}
-
-#neon-borealis {
-  display: none;
-  position: absolute;
-  background-color: #fff;
-  z-index: 10;
-}
-#neon-borealis-info {
-  position: absolute;
-  width: 100%;
-  max-height: 480px;
-  height: 106.5vw;
-  background-color: #f2b8a5;
-  z-index: -10;
-  border-radius: 13%;
-}
-#neon-borealis-png {
-  width: 100%;
-  border-radius: 13%;
-}
-
-#ganesha {
-  display: none;
-  position: absolute;
-  background-color: #fff;
-  z-index: 10;
-}
-#ganesha-info {
-  position: absolute;
-  width: 100%;
-  max-height: 480px;
-  height: 106.5vw;
-  background-color: #b8e6ff;
-  z-index: -10;
-  border-radius: 10%;
-}
-#ganesha-png {
+.png {
   width: 100%;
   border-radius: 10%;
 }
 
-#about-alex{
-  display: none;
-  position: absolute;
-  z-index: 10;
+#sierra{
+  display: flex;
+  background-color: #8ee6ce;
   max-height: 600px;
-  background-color: #ffce99;
-}
-#alex-profile-pic {
-  width: 50%;
-  min-width: 200px;
-  border-radius: 50%;
-  border: 3px solid white;
-}
-#description-alex, #description-alex a{
-  color: white;
-  width: 95%;
-  text-align: center;
-  margin: auto;
-  font-size: 19px;
+  border-radius: 13%;
 }
 
-#title-alex {
-  font-size: min(36px, 9vw);
-  color: white;
+#elephant-png {
+  border-radius: 0%;
+}
+#elephant-info {
+  height: 90vw;
+  max-height: 403px;
+  background-color: beige;
+  border-radius: 0%;
+}
+
+#naples-png {
+  border-radius: 0%;
+}
+#naples-info {
+  height: 80.9vw;
+  max-height: 363px;
+  background-color: beige;
+  border-radius: 0%;
+}
+
+#bricks-png {
+  border-radius: 0%;
+}
+#bricks-info {
+  height: 62.9vw;
+  max-height: 281.5px;
+  background-color: beige;
+  border-radius: 0%;
+}
+
+#turtle-png {
+  border-radius: 0%;
+}
+#turtle-info {
+  height: 60vw;
+  max-height: 269px;
+  background-color: beige;
+  border-radius: 0%;
+}
+
+#cream-png {
+  border-radius: 0%;
+}
+#cream-info {
+  height: 106.7vw;
+  max-height: 480px;
+  background-color: beige;
+  border-radius: 0%;
+}
+
+#bottle-png {
+  border-radius: 0%;
+}
+#bottle-info {
+  height: 38.8vw;
+  max-height: 174px;
+  background-color: beige;
+  border-radius: 0%;
+}
+
+#piggy-png {
+  border-radius: 0%;
+}
+#piggy-info {
+  height: 107vw;
+  max-height: 480px;
+  background-color: beige;
+  border-radius: 0%;
+}
+
+#guitar-png {
+  border-radius: 0%;
+}
+#guitar-info {
+  height: 115vw;
+  max-height: 515px;
+  background-color: beige;
+  border-radius: 0%;
+}
+
+#jasmine-png {
+  border-radius: 0%;
+}
+#jasmine-info {
+  height: 107vw;
+  max-height: 460px;
+  background-color: beige;
+  border-radius: 0%;
+}
+
+#blanket-png {
+  border-radius: 0%;
+}
+#blanket-info {
+  height: 108.8vw;
+  max-height: 468px;
+  background-color: beige;
+  border-radius: 0%;
+}
+
+#ceiling-png {
+  border-radius: 0%;
+}
+#ceiling-info {
+  height: 53vw;
+  max-height: 238px;
+  background-color: beige;
+  border-radius: 0%;
+}
+
+#sabetha-png {
+  border-radius: 0%;
+}
+#sabetha-info {
+  height: 110.3vw;
+  max-height: 465px;
+  background-color: beige;
+  border-radius: 0%;
+}
+
+#icicles-png {
+  border-radius: 0%;
+}
+#icicles-info {
+  height: 63.8vw;
+  max-height: 283px;
+  background-color: beige;
+  border-radius: 0%;
+}
+
+#alex{
+  display: flex;
+  background-color: #8ee6ce;
+  max-height: 600px;
+  border-radius: 0%;
 }
 
 #mobile{

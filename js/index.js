@@ -1,45 +1,37 @@
-/*
-function shadowAnimate(target, x, y, scale, duration) {
-  anime({
-    targets: target,
-    translateX: x,
-    translateY: y,
-    scale: scale,
-    duration: duration,
-    easing: 'easeOutQuad'
-  });
+const div = {
+  sierra : document.getElementById('sierra'),
+  elephant : document.getElementById('elephant'),
+  naples : document.getElementById('naples'),
+  bricks : document.getElementById('bricks'),
+  turtle : document.getElementById('turtle'),
+  cream : document.getElementById('cream'),
+  bottle : document.getElementById('bottle'),
+  piggy : document.getElementById('piggy'),
+  guitar : document.getElementById('guitar'),
+  jasmine :  document.getElementById('jasmine'),
+  blanket : document.getElementById('blanket'),
+  ceiling : document.getElementById('ceiling'),
+  sabetha : document.getElementById('sabetha'),
+  icicles : document.getElementById('icicles'),
+  alex : document.getElementById('alex')
 }
 
-function clickAnimate(target, x, duration, elasticity) {
-  anime({
-    targets: target,
-    translateX: x,
-    duration: duration,
-    elasticity: elasticity
-  })
+const png = {
+  elephant : document.getElementById('elephant-png'),
+  naples : document.getElementById('naples-png'),
+  bricks : document.getElementById('bricks-png'),
+  turtle : document.getElementById('turtle-png'),
+  cream : document.getElementById('cream-png'),
+  bottle : document.getElementById('bottle-png'),
+  piggy : document.getElementById('piggy-png'),
+  guitar : document.getElementById('guitar-png'),
+  jasmine :  document.getElementById('jasmine-png'),
+  blanket : document.getElementById('blanket-png'),
+  ceiling : document.getElementById('ceiling-png'),
+  sabetha : document.getElementById('sabetha-png'),
+  icicles : document.getElementById('icicles-png')
 }
 
-const piggyShadow = () => shadowAnimate(piggyPng, '100%', 0 , 1, 300);
-const piggyReturn = () => shadowAnimate(piggyPng, 0, 0, 1.00, 300);
-piggyPng.addEventListener('mouseenter', piggyShadow);
-piggyDiv.addEventListener('mouseleave', piggyReturn);
-*/
-let aboutDiv = document.getElementById('about-me');
-let piggyPng = document.getElementById('piggy-png');
-let piggyDiv = document.getElementById('piggy');
-let eyeDiv = document.getElementById('eye');
-let eyePng = document.getElementById('eye-png');
-let jasiDiv = document.getElementById('jasi-alien');
-let jasiPng = document.getElementById('jasi-alien-png');
-let lipsDiv = document.getElementById('lips');
-let lipsPng = document.getElementById('lips-png');
-let underwaterDiv = document.getElementById('underwater');
-let underwaterPng = document.getElementById('underwater-png');
-let neonBorealisDiv = document.getElementById('neon-borealis');
-let neonBorealisPng = document.getElementById('neon-borealis-png');
-let ganeshaDiv = document.getElementById('ganesha');
-let ganeshaPng = document.getElementById('ganesha-png');
-let alexDiv = document.getElementById('about-alex');
 
 function cardZ(target, z) {
   target.style.zIndex = z;
@@ -52,7 +44,7 @@ function cardTrick(target, duration) {
     let tl = anime.timeline({
       targets: target,
       duration: duration,
-      easing: 'easeOutQuint'
+      easing: 'easeOutQuad'
     });
     tl
     .add({
@@ -91,35 +83,39 @@ function cardTrick(target, duration) {
   }
 }
 
-const piggyTrick = () => cardTrick(piggyPng, 400);
-piggyPng.addEventListener('click', piggyTrick);
-piggyDiv.addEventListener('click', piggyTrick);
-const eyeTrick = () => cardTrick(eyePng, 400);
-eyePng.addEventListener('click', eyeTrick);
-eyeDiv.addEventListener('click', eyeTrick);
-const jasiTrick = () => cardTrick(jasiPng, 400);
-jasiPng.addEventListener('click', jasiTrick);
-jasiDiv.addEventListener('click', jasiTrick);
-const lipsTrick = () => cardTrick(lipsPng, 400);
-lipsPng.addEventListener('click', lipsTrick);
-lipsDiv.addEventListener('click', lipsTrick);
-const underwaterTrick = () => cardTrick(underwaterPng, 400);
-underwaterPng.addEventListener('click', underwaterTrick);
-underwaterDiv.addEventListener('click', underwaterTrick);
-const ganeshaTrick = () => cardTrick(ganeshaPng, 400);
-ganeshaPng.addEventListener('click', ganeshaTrick);
-ganeshaDiv.addEventListener('click', ganeshaTrick);
-const neonBorealisTrick = () => cardTrick(neonBorealisPng, 400);
-neonBorealisPng.addEventListener('click', neonBorealisTrick);
-neonBorealisDiv.addEventListener('click', neonBorealisTrick);
+
+const elephantTrick = () => cardTrick(png.elephant, 400);
+div.elephant.addEventListener('click', elephantTrick);
+const naplesTrick = () => cardTrick(png.naples, 400);
+div.naples.addEventListener('click', naplesTrick);
+const bricksTrick = () => cardTrick(png.bricks, 400);
+div.bricks.addEventListener('click', bricksTrick);
+const turtleTrick = () => cardTrick(png.turtle, 400);
+div.turtle.addEventListener('click', turtleTrick);
+const creamTrick = () => cardTrick(png.cream, 400);
+div.cream.addEventListener('click', creamTrick);
+const bottleTrick = () => cardTrick(png.bottle, 400);
+div.bottle.addEventListener('click', bottleTrick);
+const piggyTrick = () => cardTrick(png.piggy, 400);
+div.piggy.addEventListener('click', piggyTrick);
+const guitarTrick = () => cardTrick(png.guitar, 400);
+div.guitar.addEventListener('click', guitarTrick);
+const jasmineTrick = () => cardTrick(png.jasmine, 400);
+div.jasmine.addEventListener('click', jasmineTrick);
+const blanketTrick = () => cardTrick(png.blanket, 400);
+div.blanket.addEventListener('click', blanketTrick);
+const ceilingTrick = () => cardTrick(png.ceiling, 400);
+div.ceiling.addEventListener('click', ceilingTrick);
+const sabethaTrick = () => cardTrick(png.sabetha, 400);
+div.sabetha.addEventListener('click', sabethaTrick);
+const iciclesTrick = () => cardTrick(png.icicles, 400);
+div.icicles.addEventListener('click', iciclesTrick);
 
 
 let prevArrow = document.getElementById('previous');
 let shuffle = document.getElementById('shuffle');
 let nextArrow = document.getElementById('next');
-let pictureList = [aboutDiv, piggyDiv, eyeDiv, jasiDiv, lipsDiv, underwaterDiv, neonBorealisDiv, ganeshaDiv, alexDiv];
-let pictureListCopy = [aboutDiv, piggyDiv, eyeDiv, jasiDiv, lipsDiv, underwaterDiv, neonBorealisDiv, ganeshaDiv, alexDiv];
-let pngList = [aboutDiv, piggyPng, eyePng, jasiPng, lipsPng, underwaterPng, neonBorealisPng, ganeshaPng, alexDiv];
+let pictureList = [div.sierra, div.elephant, div.naples, div.bricks, div.turtle, div.cream, div.bottle, div.piggy, div.guitar, div.jasmine, div.blanket, div.ceiling, div.sabetha, div.icicles, div.alex];
 let length = pictureList.length;
 let first = pictureList[0];
 let last = pictureList[length - 1];
@@ -255,6 +251,7 @@ prevArrow.addEventListener('click', prevAnimate);
 const shuffleAction = () => cardSwapFull(shuffle);
 shuffle.addEventListener('click', shuffleAction);
 
+/*
 function displayChange(mode, exclude){
   if (mode === 'see'){
     for (let i=0; i<length; i++){
@@ -314,11 +311,9 @@ function rng(min, max) {
 
 
 const see = () => displayChange('see');
+const hide = () => displayChange('hide');
 async function shuffleAnimation(){
-  let rand = pictureList[Math.floor(rng(0, length-1))];
-  rand.style.zIndex = '12';
   see();
-  const hide = () => displayChange('hide', rand);
   setTimeout(hide, 5400);
   for (let i=0; i<3; i++){
     for (let i=0; i<pngList.length; i++){
@@ -327,3 +322,4 @@ async function shuffleAnimation(){
     }
   }
 }
+*/
