@@ -117,9 +117,9 @@ body {
 .info {
   position: absolute;
   width: 100%;
-  background-color: beige;
+  background-color: #cfcfcf;
   z-index: -10;
-  border-radius: 15%;
+  border-radius: 10%;
 }
 .png {
   width: 100%;
@@ -133,134 +133,69 @@ body {
   border-radius: 13%;
 }
 
-#elephant-png {
-  border-radius: 0%;
-}
 #elephant-info {
   height: 90vw;
-  max-height: 403px;
-  background-color: beige;
-  border-radius: 0%;
+  max-height: 404px;
 }
 
-#naples-png {
-  border-radius: 0%;
-}
 #naples-info {
   height: 80.9vw;
   max-height: 363px;
-  background-color: beige;
-  border-radius: 0%;
 }
 
-#bricks-png {
-  border-radius: 0%;
-}
 #bricks-info {
   height: 62.9vw;
   max-height: 281.5px;
-  background-color: beige;
-  border-radius: 0%;
 }
 
-#turtle-png {
-  border-radius: 0%;
-}
 #turtle-info {
   height: 60vw;
   max-height: 269px;
-  background-color: beige;
-  border-radius: 0%;
 }
 
-#cream-png {
-  border-radius: 0%;
-}
 #cream-info {
   height: 106.7vw;
   max-height: 480px;
-  background-color: beige;
-  border-radius: 0%;
 }
 
-#bottle-png {
-  border-radius: 0%;
-}
 #bottle-info {
   height: 38.8vw;
   max-height: 174px;
-  background-color: beige;
-  border-radius: 0%;
 }
 
-#piggy-png {
-  border-radius: 0%;
-}
 #piggy-info {
   height: 107vw;
   max-height: 480px;
-  background-color: beige;
-  border-radius: 0%;
 }
 
-#guitar-png {
-  border-radius: 0%;
-}
 #guitar-info {
   height: 115vw;
   max-height: 515px;
-  background-color: beige;
-  border-radius: 0%;
 }
 
-#jasmine-png {
-  border-radius: 0%;
-}
 #jasmine-info {
   height: 107vw;
   max-height: 460px;
-  background-color: beige;
-  border-radius: 0%;
 }
 
-#blanket-png {
-  border-radius: 0%;
-}
 #blanket-info {
   height: 108.8vw;
-  max-height: 468px;
-  background-color: beige;
-  border-radius: 0%;
+  max-height: 489px;
 }
 
-#ceiling-png {
-  border-radius: 0%;
-}
 #ceiling-info {
   height: 53vw;
-  max-height: 238px;
-  background-color: beige;
-  border-radius: 0%;
+  max-height: 240px;
 }
 
-#sabetha-png {
-  border-radius: 0%;
-}
 #sabetha-info {
   height: 110.3vw;
-  max-height: 465px;
-  background-color: beige;
-  border-radius: 0%;
+  max-height: 496px;;
 }
 
-#icicles-png {
-  border-radius: 0%;
-}
 #icicles-info {
   height: 63.8vw;
-  max-height: 283px;
-  background-color: beige;
-  border-radius: 0%;
+  max-height: 285px;
 }
 
 #alex{
@@ -299,5 +234,13 @@ body {
   .arrow-picture {
     height: 90px;
     width: 90px;
+  }
+  #shuffle {
+    height: 100px;
+    width: 100px;
+  }
+  #shuffle-picture {
+    height: 100px;
+    width: 100px;
   }
 }
