@@ -17,6 +17,7 @@ const div = {
 }
 
 const png = {
+  sierra : document.getElementById('sierra'),
   elephant : document.getElementById('elephant-png'),
   naples : document.getElementById('naples-png'),
   bricks : document.getElementById('bricks-png'),
@@ -29,7 +30,8 @@ const png = {
   blanket : document.getElementById('blanket-png'),
   ceiling : document.getElementById('ceiling-png'),
   sabetha : document.getElementById('sabetha-png'),
-  icicles : document.getElementById('icicles-png')
+  icicles : document.getElementById('icicles-png'),
+  alex : document.getElementById('alex')
 }
 
 
@@ -116,6 +118,7 @@ let prevArrow = document.getElementById('previous');
 let shuffle = document.getElementById('shuffle');
 let nextArrow = document.getElementById('next');
 let pictureList = [div.sierra, div.elephant, div.naples, div.bricks, div.turtle, div.cream, div.bottle, div.piggy, div.guitar, div.jasmine, div.blanket, div.ceiling, div.sabetha, div.icicles, div.alex];
+let pngList = [png.sierra, png.elephant, png.naples, png.bricks, png.turtle, png.cream, png.bottle, png.piggy, png.guitar, png.jasmine, png.blanket, png.ceiling, png.sabetha, png.icicles, png.alex];
 let length = pictureList.length;
 let first = pictureList[0];
 let last = pictureList[length - 1];
@@ -240,21 +243,45 @@ function arrowAnimation(button, x){
   })
 }
 
+function dieRoll() {
+  let tl = anime.timeline({
+    targets: shuffle,
+    easing: 'easeOutQuad',
+    duration: 1800
+  });
+  tl
+  .add({
+    rotate: 1080
+  });
+  tl
+  .add({
+    rotate: 2160
+  });
+  tl
+  .add({
+    rotate: 0
+  })
+}
+
 const next = () => cardSwapFull(nextArrow);
 nextArrow.addEventListener('click', next);
 const nextAnimate = () => arrowAnimation(nextArrow, 7);
 nextArrow.addEventListener('click', nextAnimate);
+
 const prev = () => cardSwapFull(prevArrow);
 prevArrow.addEventListener('click', prev);
 const prevAnimate = () => arrowAnimation(prevArrow, -7);
 prevArrow.addEventListener('click', prevAnimate);
-const shuffleAction = () => cardSwapFull(shuffle);
-shuffle.addEventListener('click', shuffleAction);
 
-/*
+const shuffleAction = () => shuffleAnimation();
+shuffle.addEventListener('click', shuffleAction);
+const dieAnimate = () => dieRoll();
+shuffle.addEventListener('click', dieAnimate);
+
+
 function displayChange(mode, exclude){
   if (mode === 'see'){
-    for (let i=0; i<length; i++){
+    for (let i=0; i<pictureList.length; i++){
       pictureList[i].style.display = 'flex';
     }
   }else {
@@ -309,17 +336,20 @@ function rng(min, max) {
   return Math.random() * (max - min) + min;
 }
 
-
 const see = () => displayChange('see');
-const hide = () => displayChange('hide');
+let random = Math.floor(rng(0, length))
+const hide = () => displayChange('hide', pictureList[random]);
+let firstCurrent = current;
+current = random;
 async function shuffleAnimation(){
   see();
   setTimeout(hide, 5400);
   for (let i=0; i<3; i++){
     for (let i=0; i<pngList.length; i++){
-      rotate(pngList[i], 'left', (rng(-200, 200)), rng(-400, 400), rng(-400, 400));
-      await new Promise(r => setTimeout(r, 100));
+      if (i !== firstCurrent){
+        rotate(pngList[i], 'left', (rng(-200, 200)), rng(-400, 400), rng(-400, 400));
+        await new Promise(r => setTimeout(r, 100));
+      }
     }
   }
 }
-*/

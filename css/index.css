@@ -129,6 +129,7 @@ body {
   border-radius: 10%;
 }
 
+
 #elephant-info {
   height: 90vw;
   max-height: 404px;
@@ -198,7 +199,7 @@ body {
   display: flex;
   background-color: #8ee6ce;
   max-height: 600px;
-  border-radius: 0%;
+  border-radius: 15%;
 }
 
 #mobile{
