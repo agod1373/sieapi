@@ -82,23 +82,6 @@ const icicles = new Piece('icicles', 'icicles-png');
 const alex = new Piece('alex', 0);
 
 
-const png = {
-  sierra : document.getElementById('sierra'),
-  //elephant : document.getElementById('elephant-png'),
-  naples : document.getElementById('naples-png'),
-  bricks : document.getElementById('bricks-png'),
-  turtle : document.getElementById('turtle-png'),
-  cream : document.getElementById('cream-png'),
-  bottle : document.getElementById('bottle-png'),
-  piggy : document.getElementById('piggy-png'),
-  guitar : document.getElementById('guitar-png'),
-  jasmine :  document.getElementById('jasmine-png'),
-  blanket : document.getElementById('blanket-png'),
-  ceiling : document.getElementById('ceiling-png'),
-  sabetha : document.getElementById('sabetha-png'),
-  icicles : document.getElementById('icicles-png'),
-  alex : document.getElementById('alex')
-}
 
 
 function cardZ(target, z) {
@@ -184,7 +167,7 @@ let prevArrow = document.getElementById('previous');
 let shuffle = document.getElementById('shuffle');
 let nextArrow = document.getElementById('next');
 let pictureList = [sierra.div, elephant.div, naples.div, bricks.div, turtle.div, cream.div, bottle.div, piggy.div, guitar.div, jasmine.div, blanket.div, ceiling.div, sabetha.div, icicles.div, alex.div];
-let pngList = [png.sierra, elephant.png, png.naples, png.bricks, png.turtle, png.cream, png.bottle, png.piggy, png.guitar, png.jasmine, png.blanket, png.ceiling, png.sabetha, png.icicles, png.alex];
+let pngList = [sierra.div, elephant.png, naples.png, bricks.png, turtle.png, cream.png, bottle.png, piggy.png, guitar.png, jasmine.png, blanket.png, ceiling.png, sabetha.png, icicles.png, alex.div];
 let length = pictureList.length;
 let first = pictureList[0];
 let last = pictureList[length - 1];
