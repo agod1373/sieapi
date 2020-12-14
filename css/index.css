@@ -38,7 +38,6 @@ body {
   text-align: center;
 }
 
-
 .piece {
   position: absolute;
   display: none;
@@ -48,6 +47,7 @@ body {
   height: 65vh;
   display: none;
   background-color: #fff;
+  border-radius: 10%;
   z-index: 10;
 }
 .title {

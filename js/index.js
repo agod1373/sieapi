@@ -1,24 +1,90 @@
-const div = {
-  sierra : document.getElementById('sierra'),
-  elephant : document.getElementById('elephant'),
-  naples : document.getElementById('naples'),
-  bricks : document.getElementById('bricks'),
-  turtle : document.getElementById('turtle'),
-  cream : document.getElementById('cream'),
-  bottle : document.getElementById('bottle'),
-  piggy : document.getElementById('piggy'),
-  guitar : document.getElementById('guitar'),
-  jasmine :  document.getElementById('jasmine'),
-  blanket : document.getElementById('blanket'),
-  ceiling : document.getElementById('ceiling'),
-  sabetha : document.getElementById('sabetha'),
-  icicles : document.getElementById('icicles'),
-  alex : document.getElementById('alex')
+class Piece {
+  constructor(div, png){
+    this.div = document.getElementById(div);
+    if (typeof(png)==='string'){
+      this.png = document.getElementById(png);
+    }
+  }
+
+  /*
+  changeZ(){
+    target.style.zIndex = z;
+  }
+
+  trick(duration) {
+    let target = document.getElementById('elephant');
+    if (target.style.zIndex === '-10'){
+      const cardZVar = () => this.changeZ(target, 10);
+      setTimeout(cardZVar, duration);
+      let tl = anime.timeline({
+        targets: target,
+        duration: duration,
+        easing: 'easeOutQuad'
+      });
+      tl
+      .add({
+        translateX: '100%',
+        translateY: '-10%',
+        rotate: 10
+      });
+      //at this point the target z-index will be set to -10 by the cardZVar function
+      tl
+      .add({
+        translateX: 0,
+        translateY: 0,
+        rotate: 0
+      })
+    }else {
+      const cardZVar = () => cardZ(target, -10);
+      setTimeout(cardZVar, duration);
+      let tl = anime.timeline({
+        targets: target,
+        duration: duration,
+        easing: 'easeOutQuad'
+      });
+      tl
+      .add({
+        translateX: '100%',
+        translateY: '-10%',
+        rotate: 10
+      });
+      //at this point the target z-index will be set to 10 by the cardZVar function
+      tl
+      .add({
+        translateX: 0,
+        translateY: 0,
+        rotate: 0
+      })
+    }
+  }
+
+  full(){
+
+  }
+
+  */
 }
+
+const sierra = new Piece('sierra', 0);
+const elephant = new Piece('elephant', 'elephant-png');
+const naples = new Piece('naples', 'naples-png');
+const bricks = new Piece('bricks', 'bricks-png');
+const turtle = new Piece('turtle', 'turtle-png');
+const cream = new Piece('cream', 'cream-png');
+const bottle = new Piece('bottle', 'bottle-png');
+const piggy = new Piece('piggy', 'piggy-png');
+const guitar = new Piece('guitar', 'guitar-png');
+const jasmine = new Piece('jasmine', 'jasmine-png');
+const blanket = new Piece('blanket', 'blanket-png');
+const ceiling = new Piece('ceiling', 'ceiling-png');
+const sabetha = new Piece('sabetha', 'sabetha-png');
+const icicles = new Piece('icicles', 'icicles-png');
+const alex = new Piece('alex', 0);
+
 
 const png = {
   sierra : document.getElementById('sierra'),
-  elephant : document.getElementById('elephant-png'),
+  //elephant : document.getElementById('elephant-png'),
   naples : document.getElementById('naples-png'),
   bricks : document.getElementById('bricks-png'),
   turtle : document.getElementById('turtle-png'),
@@ -86,39 +152,39 @@ function cardTrick(target, duration) {
 }
 
 
-const elephantTrick = () => cardTrick(png.elephant, 400);
-div.elephant.addEventListener('click', elephantTrick);
-const naplesTrick = () => cardTrick(png.naples, 400);
-div.naples.addEventListener('click', naplesTrick);
-const bricksTrick = () => cardTrick(png.bricks, 400);
-div.bricks.addEventListener('click', bricksTrick);
-const turtleTrick = () => cardTrick(png.turtle, 400);
-div.turtle.addEventListener('click', turtleTrick);
-const creamTrick = () => cardTrick(png.cream, 400);
-div.cream.addEventListener('click', creamTrick);
-const bottleTrick = () => cardTrick(png.bottle, 400);
-div.bottle.addEventListener('click', bottleTrick);
-const piggyTrick = () => cardTrick(png.piggy, 400);
-div.piggy.addEventListener('click', piggyTrick);
-const guitarTrick = () => cardTrick(png.guitar, 400);
-div.guitar.addEventListener('click', guitarTrick);
-const jasmineTrick = () => cardTrick(png.jasmine, 400);
-div.jasmine.addEventListener('click', jasmineTrick);
-const blanketTrick = () => cardTrick(png.blanket, 400);
-div.blanket.addEventListener('click', blanketTrick);
-const ceilingTrick = () => cardTrick(png.ceiling, 400);
-div.ceiling.addEventListener('click', ceilingTrick);
-const sabethaTrick = () => cardTrick(png.sabetha, 400);
-div.sabetha.addEventListener('click', sabethaTrick);
-const iciclesTrick = () => cardTrick(png.icicles, 400);
-div.icicles.addEventListener('click', iciclesTrick);
+const elephantTrick = () => cardTrick(elephant.png, 400);
+elephant.div.addEventListener('click', elephantTrick);
+const naplesTrick = () => cardTrick(naples.png, 400);
+naples.div.addEventListener('click', naplesTrick);
+const bricksTrick = () => cardTrick(bricks.png, 400);
+bricks.div.addEventListener('click', bricksTrick);
+const turtleTrick = () => cardTrick(turtle.png, 400);
+turtle.div.addEventListener('click', turtleTrick);
+const creamTrick = () => cardTrick(cream.png, 400);
+cream.div.addEventListener('click', creamTrick);
+const bottleTrick = () => cardTrick(bottle.png, 400);
+bottle.div.addEventListener('click', bottleTrick);
+const piggyTrick = () => cardTrick(piggy.png, 400);
+piggy.div.addEventListener('click', piggyTrick);
+const guitarTrick = () => cardTrick(guitar.png, 400);
+guitar.div.addEventListener('click', guitarTrick);
+const jasmineTrick = () => cardTrick(jasmine.png, 400);
+jasmine.div.addEventListener('click', jasmineTrick);
+const blanketTrick = () => cardTrick(blanket.png, 400);
+blanket.div.addEventListener('click', blanketTrick);
+const ceilingTrick = () => cardTrick(ceiling.png, 400);
+ceiling.div.addEventListener('click', ceilingTrick);
+const sabethaTrick = () => cardTrick(sabetha.png, 400);
+sabetha.div.addEventListener('click', sabethaTrick);
+const iciclesTrick = () => cardTrick(icicles.png, 400);
+icicles.div.addEventListener('click', iciclesTrick);
 
 
 let prevArrow = document.getElementById('previous');
 let shuffle = document.getElementById('shuffle');
 let nextArrow = document.getElementById('next');
-let pictureList = [div.sierra, div.elephant, div.naples, div.bricks, div.turtle, div.cream, div.bottle, div.piggy, div.guitar, div.jasmine, div.blanket, div.ceiling, div.sabetha, div.icicles, div.alex];
-let pngList = [png.sierra, png.elephant, png.naples, png.bricks, png.turtle, png.cream, png.bottle, png.piggy, png.guitar, png.jasmine, png.blanket, png.ceiling, png.sabetha, png.icicles, png.alex];
+let pictureList = [sierra.div, elephant.div, naples.div, bricks.div, turtle.div, cream.div, bottle.div, piggy.div, guitar.div, jasmine.div, blanket.div, ceiling.div, sabetha.div, icicles.div, alex.div];
+let pngList = [png.sierra, elephant.png, png.naples, png.bricks, png.turtle, png.cream, png.bottle, png.piggy, png.guitar, png.jasmine, png.blanket, png.ceiling, png.sabetha, png.icicles, png.alex];
 let length = pictureList.length;
 let first = pictureList[0];
 let last = pictureList[length - 1];
@@ -333,14 +399,13 @@ function rotate(target, direction, rotateNumber, translateXNumber, translateYNum
 }
 
 function rng(min, max) {
-  return Math.random() * (max - min) + min;
+  return Math.floor(Math.random() * (max - min) + min);
 }
 
 const see = () => displayChange('see');
-let random = Math.floor(rng(0, length))
+let random = rng(0, length)
 const hide = () => displayChange('hide', pictureList[random]);
 let firstCurrent = current;
-current = random;
 async function shuffleAnimation(){
   see();
   setTimeout(hide, 5400);
