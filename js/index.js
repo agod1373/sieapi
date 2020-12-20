@@ -1,3 +1,4 @@
+//creates Piece class that constructs DOM nodes for each card
 class Piece {
   constructor(div, png){
     this.div = document.getElementById(div);
@@ -5,67 +6,9 @@ class Piece {
       this.png = document.getElementById(png);
     }
   }
-
-
-  /*
-  changeZ(){
-    target.style.zIndex = z;
-  }
-
-  trick(duration) {
-    let target = document.getElementById('elephant');
-    if (target.style.zIndex === '-10'){
-      const cardZVar = () => this.changeZ(target, 10);
-      setTimeout(cardZVar, duration);
-      let tl = anime.timeline({
-        targets: target,
-        duration: duration,
-        easing: 'easeOutQuad'
-      });
-      tl
-      .add({
-        translateX: '100%',
-        translateY: '-10%',
-        rotate: 10
-      });
-      //at this point the target z-index will be set to -10 by the cardZVar function
-      tl
-      .add({
-        translateX: 0,
-        translateY: 0,
-        rotate: 0
-      })
-    }else {
-      const cardZVar = () => cardZ(target, -10);
-      setTimeout(cardZVar, duration);
-      let tl = anime.timeline({
-        targets: target,
-        duration: duration,
-        easing: 'easeOutQuad'
-      });
-      tl
-      .add({
-        translateX: '100%',
-        translateY: '-10%',
-        rotate: 10
-      });
-      //at this point the target z-index will be set to 10 by the cardZVar function
-      tl
-      .add({
-        translateX: 0,
-        translateY: 0,
-        rotate: 0
-      })
-    }
-  }
-
-  full(){
-
-  }
-
-  */
 }
 
+//initialize cards
 const sierra = new Piece('sierra', 0);
 const elephant = new Piece('elephant', 'elephant-png');
 const naples = new Piece('naples', 'naples-png');
@@ -81,13 +24,12 @@ const ceiling = new Piece('ceiling', 'ceiling-png');
 const sabetha = new Piece('sabetha', 'sabetha-png');
 const icicles = new Piece('icicles', 'icicles-png');
 
-
-
-
+//function changes z-index of a card
 function cardZ(target, z) {
   target.style.zIndex = z;
 }
 
+//function reveals description for card
 function cardTrick(target, duration) {
   if (target.style.zIndex === '-10'){
     const cardZVar = () => cardZ(target, 10);
@@ -134,21 +76,18 @@ function cardTrick(target, duration) {
   }
 }
 
-
-
-
-
-
+//create DOM nodes for navigation
 let prevArrow = document.getElementById('previous');
 let shuffle = document.getElementById('shuffle');
 let nextArrow = document.getElementById('next');
+//creates arrays of cards
 let divList = [sierra.div, elephant.div, naples.div, bricks.div, turtle.div, cream.div, bottle.div, piggy.div, guitar.div, jasmine.div, blanket.div, ceiling.div, sabetha.div, icicles.div];
 let pngList = [sierra.div, elephant.png, naples.png, bricks.png, turtle.png, cream.png, bottle.png, piggy.png, guitar.png, jasmine.png, blanket.png, ceiling.png, sabetha.png, icicles.png];
-
 let length = divList.length;
 let first = divList[0];
 let last = divList[length - 1];
 
+//creates reveal description function and adds event listeners for each card
 const elephantTrick = () => cardTrick(elephant.png, 400);
 const naplesTrick = () => cardTrick(naples.png, 400);
 const bricksTrick = () => cardTrick(bricks.png, 400);
@@ -167,6 +106,7 @@ for (let i=1; i<divList.length-2; i++){
   divList[i].addEventListener('click', trickList[i-1]);
 }
 
+//creates forward motion animation
 function cardSwapForward(target, duration) {
   let tl = anime.timeline({
     targets: target,
@@ -195,6 +135,7 @@ function cardSwapForward(target, duration) {
   }
 }
 
+//creates backward animation function
 function cardSwapBackward(target, duration) {
   let tl = anime.timeline({
     targets: target,
@@ -224,6 +165,7 @@ function cardSwapBackward(target, duration) {
   }
 }
 
+//function that resets z index (changed by cardSwapForward and cardSwapBackward) of each card
 function zReturn(){
   for (let i=0; i<length; i++){
     divList[i].style.zIndex = '10';
@@ -233,6 +175,7 @@ function zReturn(){
   }
 }
 
+//amalgamates cardSwapForward and cardSwapBackward
 let current = 0;
 function cardSwapFull(button){
   //next arrow click
@@ -271,6 +214,7 @@ function cardSwapFull(button){
   }
 }
 
+//adds animation to arrow navigations
 function arrowAnimation(button, x){
   let tl = anime.timeline({
     targets: button,
@@ -287,6 +231,7 @@ function arrowAnimation(button, x){
   })
 }
 
+//creates die spinning animation
 function dieRoll() {
   let tl = anime.timeline({
     targets: shuffle,
@@ -303,6 +248,7 @@ function dieRoll() {
   });
 }
 
+//event listeners for navigation animations
 const next = () => cardSwapFull(nextArrow);
 nextArrow.addEventListener('click', next);
 const nextAnimate = () => arrowAnimation(nextArrow, 7);
@@ -315,10 +261,10 @@ prevArrow.addEventListener('click', prevAnimate);
 
 const shuffleAction = () => shuffleAnimation();
 shuffle.addEventListener('click', shuffleAction);
-const dieAnimate = () => dieRoll();
+const shuffleAnimate = () => arrowAnimation(shuffle, 7);
 shuffle.addEventListener('click', dieAnimate);
 
-
+//changes the display mode of a specific card
 function displayChange(mode, exclude){
   if (mode === 'see'){
     for (let i=0; i<divList.length; i++){
@@ -333,6 +279,7 @@ function displayChange(mode, exclude){
   }
 }
 
+//rotate function for individual card of shuffle animation
 function rotate(target, direction, rotateNumber, translateXNumber, translateYNumber){
   if (direction === 'left'){
     let tl = anime.timeline({
@@ -372,10 +319,12 @@ function rotate(target, direction, rotateNumber, translateXNumber, translateYNum
 
 }
 
+//creates rng (int) function
 function rng(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
 }
 
+//amalgamated shuffle animation
 const see = () => displayChange('see');
 let random = rng(0, length)
 const hide = () => displayChange('hide', divList[random]);
