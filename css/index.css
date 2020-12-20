@@ -54,11 +54,18 @@ body {
   font-size: min(50px, 12vw);
   margin: 10px;
 }
+#small-title {
+  font-size: min(40px, 12vw);
+  margin: 10px;
+}
 .description {
   width: 95%;
   text-align: center;
   margin: 10px auto;
-  font-size: 19px;
+  font-size: 24px;
+}
+.date {
+  font-size: 28px;
 }
 .download {
   position: absolute;
@@ -144,6 +151,7 @@ body {
   height: 62.9vw;
   max-height: 281.5px;
 }
+
 
 #turtle-info {
   height: 60vw;

@@ -20,7 +20,6 @@ const piggy = new Piece('piggy', 'piggy-png');
 const guitar = new Piece('guitar', 'guitar-png');
 const jasmine = new Piece('jasmine', 'jasmine-png');
 const blanket = new Piece('blanket', 'blanket-png');
-const ceiling = new Piece('ceiling', 'ceiling-png');
 const sabetha = new Piece('sabetha', 'sabetha-png');
 const icicles = new Piece('icicles', 'icicles-png');
 
@@ -81,8 +80,8 @@ let prevArrow = document.getElementById('previous');
 let shuffle = document.getElementById('shuffle');
 let nextArrow = document.getElementById('next');
 //creates arrays of cards
-let divList = [sierra.div, elephant.div, naples.div, bricks.div, turtle.div, cream.div, bottle.div, piggy.div, guitar.div, jasmine.div, blanket.div, ceiling.div, sabetha.div, icicles.div];
-let pngList = [sierra.div, elephant.png, naples.png, bricks.png, turtle.png, cream.png, bottle.png, piggy.png, guitar.png, jasmine.png, blanket.png, ceiling.png, sabetha.png, icicles.png];
+let divList = [sierra.div, elephant.div, naples.div, bricks.div, turtle.div, cream.div, bottle.div, piggy.div, guitar.div, jasmine.div, blanket.div, sabetha.div, icicles.div];
+let pngList = [sierra.div, elephant.png, naples.png, bricks.png, turtle.png, cream.png, bottle.png, piggy.png, guitar.png, jasmine.png, blanket.png, sabetha.png, icicles.png];
 let length = divList.length;
 let first = divList[0];
 let last = divList[length - 1];
@@ -98,10 +97,9 @@ const piggyTrick = () => cardTrick(piggy.png, 400);
 const guitarTrick = () => cardTrick(guitar.png, 400);
 const jasmineTrick = () => cardTrick(jasmine.png, 400);
 const blanketTrick = () => cardTrick(blanket.png, 400);
-const ceilingTrick = () => cardTrick(ceiling.png, 400);
 const sabethaTrick = () => cardTrick(sabetha.png, 400);
 const iciclesTrick = () => cardTrick(icicles.png, 400);
-let trickList = [elephantTrick, naplesTrick, bricksTrick, turtleTrick, creamTrick, bottleTrick, piggyTrick, guitarTrick, jasmineTrick, blanketTrick, ceilingTrick, sabethaTrick, iciclesTrick];
+let trickList = [elephantTrick, naplesTrick, bricksTrick, turtleTrick, creamTrick, bottleTrick, piggyTrick, guitarTrick, jasmineTrick, blanketTrick, sabethaTrick, iciclesTrick];
 for (let i=1; i<divList.length-2; i++){
   divList[i].addEventListener('click', trickList[i-1]);
 }
@@ -261,7 +259,7 @@ prevArrow.addEventListener('click', prevAnimate);
 
 const shuffleAction = () => shuffleAnimation();
 shuffle.addEventListener('click', shuffleAction);
-const shuffleAnimate = () => arrowAnimation(shuffle, 7);
+const dieAnimate = () => dieRoll();
 shuffle.addEventListener('click', dieAnimate);
 
 //changes the display mode of a specific card
